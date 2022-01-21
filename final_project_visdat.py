@@ -11,10 +11,7 @@ from bokeh.resources import INLINE
 from datetime import date
 
 
-data = pd.read_csv("/data/WHO-COVID-19-global-data.csv", parse_dates=['Date_reported'])
-data
-
-pd.unique(data["Country"])
+data = pd.read_csv("./data/WHO-COVID-19-global-data.csv", parse_dates=['Date_reported'])
 
 data.info()
 
@@ -26,7 +23,6 @@ output_notebook(resources=INLINE)
 kasbar2 = (data[(data['Country'] == 'Italy') | (data['Country'] == 'India') | (data['Country'] == 'Indonesia')]
                .loc[:, ['Date', 'Country', 'New_cases','Cumulative_cases','New_deaths','Cumulative_deaths']]
                .sort_values(['Date']))
-kasbar2
 
 # Membuat file yang dioutputkan
 output_file('KasusBaruCov-19.html', 
