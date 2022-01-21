@@ -11,7 +11,7 @@ from bokeh.resources import INLINE
 from datetime import date
 
 
-data = pd.read_csv("./data/WHO-COVID-19-global-data.csv", parse_dates=['Date_reported'])
+data = pd.read_csv("data/WHO-COVID-19-global-data.csv", parse_dates=['Date_reported'])
 data
 
 pd.unique(data["Country"])
